@@ -2,17 +2,13 @@
   <ion-toolbar>
     <ion-title>{{'DGG Store'|uppercase}}</ion-title>
 
-    <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="openFavorites()" title="Favoritos">
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
-
-        @if (favoritesCount > 0) {
-          <ion-badge color="warning" style="margin-left:6px;">
-            Favoritos: {{ favoritesCount }}
-          </ion-badge>
-        }
-      </ion-button>
-    </ion-buttons>
+    <ion-button fill="clear" (click)="openFavorites()" title="Favoritos">
+  <ion-icon name="heart"></ion-icon>
+  Ver seus favoritos
+  <ion-badge *ngIf="favoritesCount > 0" color="warning" style="margin-left:6px;">
+    {{ favoritesCount }}
+  </ion-badge>
+</ion-button>
   </ion-toolbar>
 </ion-header>
 
